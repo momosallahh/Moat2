@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Command Center - Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0B0F14;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .glass {
+            background: rgba(26, 31, 46, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-blue {
+            background: linear-gradient(135deg, #00AEEF 0%, #00E6A8 100%);
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-[#0B0F14] text-white min-h-screen">
+    <!-- Sidebar -->
+    <aside class="fixed left-0 top-0 h-screen w-64 glass border-r border-white/10 z-40">
+        <div class="p-6 border-b border-white/10">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg gradient-blue flex items-center justify-center text-2xl">
+                    🛡️
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold">Command</h2>
+                    <p class="text-xs text-gray-400">Center</p>
+                </div>
+            </div>
+        </div>
+        <nav class="p-4 space-y-2">
+            <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-[#00AEEF] text-white">
+                <span>📊</span>
+                <span class="font-medium">Dashboard</span>
+            </a>
+            <a href="#moat" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-[#1a1f2e] hover:text-white">
+                <span>🛡️</span>
+                <span class="font-medium">Moat Meter</span>
+            </a>
+            <a href="#routines" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-[#1a1f2e] hover:text-white">
+                <span>⚙️</span>
+                <span class="font-medium">Routine Manager</span>
+            </a>
+            <a href="#staff" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-[#1a1f2e] hover:text-white">
+                <span>🤖</span>
+                <span class="font-medium">AI Staff</span>
+            </a>
+            <a href="#reports" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:bg-[#1a1f2e] hover:text-white">
+                <span>📈</span>
+                <span class="font-medium">Reports</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="ml-64">
+        <!-- Header -->
+        <header class="glass sticky top-0 z-50 border-b border-white/10">
+            <div class="px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-2xl font-bold">Good morning, <span class="text-[#00AEEF]">Alex</span></h1>
+                        <p class="text-sm text-gray-400">Here's your business at a glance</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="relative p-2 rounded-lg hover:bg-[#1a1f2e]">
+                            🔔
+                            <span class="absolute top-1 right-1 w-2 h-2 bg-[#00E6A8] rounded-full"></span>
+                        </div>
+                        <div class="w-8 h-8 rounded-full gradient-blue flex items-center justify-center">
+                            👤
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <main class="p-8">
+            <!-- Company Overview Section -->
+            <section class="mb-8" id="moat">
+                <h2 class="text-xl font-bold mb-4">Company Overview</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Moat Meter -->
+                    <div class="glass rounded-2xl p-6 border border-white/10">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="p-2 rounded-lg bg-[#00AEEF]/20">
+                                    <span class="text-2xl">🛡️</span>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold">Moat Meter™</h3>
+                                    <p class="text-sm text-gray-400">Business Protection Score</p>
+                                </div>
+                            </div>
+                            <span class="text-2xl">✅</span>
+                        </div>
+
+                        <!-- Score Circle -->
+                        <div class="relative flex items-center justify-center mb-6">
+                            <svg class="w-48 h-48 transform -rotate-90">
+                                <circle cx="96" cy="96" r="80" stroke="rgba(255,255,255,0.1)" stroke-width="12" fill="none"/>
+                                <circle cx="96" cy="96" r="80" stroke="#00AEEF" stroke-width="12" fill="none"
+                                        stroke-dasharray="301 502" stroke-linecap="round"/>
+                            </svg>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                <div class="text-5xl font-bold text-[#00AEEF]">60</div>
+                                <div class="text-sm text-gray-400 mt-1">/ 100</div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mb-4 p-3 rounded-lg bg-blue-500/10">
+                            <div class="text-xl font-bold text-[#00AEEF]">STRONG</div>
+                            <p class="text-sm text-gray-300 mt-1">Good protection. A few more routines will make you unbeatable.</p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span class="text-gray-400">Active Routines</span>
+                                    <span class="font-semibold">4 / 10</span>
+                                </div>
+                                <div class="h-2 bg-[#1a1f2e] rounded-full overflow-hidden">
+                                    <div class="h-full gradient-blue w-[40%]"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span class="text-gray-400">AI Agents Deployed</span>
+                                    <span class="font-semibold">4 / 6</span>
+                                </div>
+                                <div class="h-2 bg-[#1a1f2e] rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-[#00E6A8] to-[#EFBF45] w-[67%]"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="w-full mt-6 py-3 px-4 rounded-lg gradient-blue text-white font-semibold hover:shadow-lg">
+                            Add More Protection
+                        </button>
+                    </div>
+
+                    <!-- Business Health Indicators -->
+                    <div class="lg:col-span-2 space-y-6">
+                        <div class="glass rounded-2xl p-6 border border-white/10">
+                            <h3 class="text-lg font-bold mb-4">Business Health Indicators</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-[#1a1f2e]/50 rounded-lg p-4">
+                                    <p class="text-sm text-gray-400 mb-1">Lead Response Time</p>
+                                    <p class="text-2xl font-bold text-[#00E6A8]">2.3 min</p>
+                                    <p class="text-xs text-[#00E6A8]">↑ 45% faster</p>
+                                </div>
+                                <div class="bg-[#1a1f2e]/50 rounded-lg p-4">
+                                    <p class="text-sm text-gray-400 mb-1">Customer Satisfaction</p>
+                                    <p class="text-2xl font-bold text-[#00E6A8]">4.8/5.0</p>
+                                    <p class="text-xs text-[#00E6A8]">↑ 0.3 points</p>
+                                </div>
+                                <div class="bg-[#1a1f2e]/50 rounded-lg p-4">
+                                    <p class="text-sm text-gray-400 mb-1">Automation Rate</p>
+                                    <p class="text-2xl font-bold text-[#00AEEF]">68%</p>
+                                    <p class="text-xs text-[#00AEEF]">↑ 12% this month</p>
+                                </div>
+                                <div class="bg-[#1a1f2e]/50 rounded-lg p-4">
+                                    <p class="text-sm text-gray-400 mb-1">Time Saved/Week</p>
+                                    <p class="text-2xl font-bold text-[#EFBF45]">14.5 hrs</p>
+                                    <p class="text-xs text-[#EFBF45]">Worth $580</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass rounded-2xl p-6 border border-white/10">
+                            <h3 class="text-lg font-bold mb-4">Recent AI Activity</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3 text-sm">
+                                    <div class="w-2 h-2 bg-[#00E6A8] rounded-full"></div>
+                                    <span class="text-gray-400">Sales Agent</span>
+                                    <span>responded to 3 new leads</span>
+                                    <span class="text-gray-500 ml-auto text-xs">2 min ago</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-sm">
+                                    <div class="w-2 h-2 bg-[#00AEEF] rounded-full"></div>
+                                    <span class="text-gray-400">Customer Care</span>
+                                    <span>sent 12 review requests</span>
+                                    <span class="text-gray-500 ml-auto text-xs">15 min ago</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-sm">
+                                    <div class="w-2 h-2 bg-[#EFBF45] rounded-full"></div>
+                                    <span class="text-gray-400">Hiring Agent</span>
+                                    <span>screened 5 applications</span>
+                                    <span class="text-gray-500 ml-auto text-xs">1 hr ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard Widgets -->
+            <section class="mb-8">
+                <h2 class="text-xl font-bold mb-4">Business Metrics</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Widget 1 -->
+                    <div class="glass rounded-xl p-6 border border-white/10 hover:border-[#00AEEF]/50 transition-all">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <p class="text-sm text-gray-400 mb-1">Leads This Week</p>
+                                <h3 class="text-3xl font-bold">47</h3>
+                            </div>
+                            <div class="p-3 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500">
+                                <span class="text-2xl">👥</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-[#00E6A8]">↑</span>
+                            <span class="text-sm font-medium text-[#00E6A8]">+12%</span>
+                        </div>
+                        <p class="text-xs text-gray-400">23 from Google, 15 from referrals, 9 organic</p>
+                    </div>
+
+                    <!-- Widget 2 -->
+                    <div class="glass rounded-xl p-6 border border-white/10 hover:border-[#00AEEF]/50 transition-all">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <p class="text-sm text-gray-400 mb-1">Pending Invoices</p>
+                                <h3 class="text-3xl font-bold">$8,450</h3>
+                            </div>
+                            <div class="p-3 rounded-lg bg-gradient-to-br from-emerald-500 to-green-500">
+                                <span class="text-2xl">💰</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-gray-400">⏱️</span>
+                            <span class="text-sm font-medium text-gray-400">5 unpaid</span>
+                        </div>
+                        <p class="text-xs text-gray-400">Total: $12,800 | Paid: $4,350</p>
+                    </div>
+
+                    <!-- Widget 3 -->
+                    <div class="glass rounded-xl p-6 border border-white/10 hover:border-[#00AEEF]/50 transition-all">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <p class="text-sm text-gray-400 mb-1">Open Tasks</p>
+                                <h3 class="text-3xl font-bold">23</h3>
+                            </div>
+                            <div class="p-3 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500">
+                                <span class="text-2xl">✅</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-[#00E6A8]">↑</span>
+                            <span class="text-sm font-medium text-[#00E6A8]">-3 from yesterday</span>
+                        </div>
+                        <p class="text-xs text-gray-400">8 urgent, 15 normal priority</p>
+                    </div>
+
+                    <!-- Widget 4 -->
+                    <div class="glass rounded-xl p-6 border border-white/10 hover:border-[#00AEEF]/50 transition-all">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <p class="text-sm text-gray-400 mb-1">Scheduled Messages</p>
+                                <h3 class="text-3xl font-bold">15</h3>
+                            </div>
+                            <div class="p-3 rounded-lg bg-gradient-to-br from-orange-500 to-red-500">
+                                <span class="text-2xl">💬</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-gray-400">⏱️</span>
+                            <span class="text-sm font-medium text-gray-400">Next in 2hrs</span>
+                        </div>
+                        <p class="text-xs text-gray-400">12 SMS, 3 email follow-ups</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Staff Panel -->
+            <section class="mb-8" id="staff">
+                <h2 class="text-xl font-bold mb-4">AI Staff Panel</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Agent 1 -->
+                    <div class="glass rounded-xl p-6 border border-white/10 hover:border-[#00AEEF]/50 transition-all">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-2xl">
+                                    📞
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Sales Agent</h3>
+                                    <p class="text-xs text-gray-400">Lead Response</p>
+                                </div>
+                            </div>
+                            <div class="w-3 h-3 rounded-full bg-[#00E6A8] animate-pulse"></div>
+                        </div>
+                        <div class="mb-4 p-3 bg-[#1a1f2e]/50 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-1">Current Task</p>
+                            <p class="text-sm">Responding to 3 new leads</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-xs text-gray-400 mb-1">Tasks Today</p>
+                                <p class="text-2xl font-bold">47</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400 mb-1">Success Rate</p>
+                                <p class="text-2xl font-bold">92%</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Agent 2 -->
+                    <div class="glass rounded-xl p-6 border border-white/10 hover:border-[#00AEEF]/50 transition-all">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-2xl">
+                                    👷
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Hiring Agent</h3>
+                                    <p class="text-xs text-gray-400">Applicant Screening</p>
+                                </div>
+                            </div>
+                            <div class="w-3 h-3 rounded-full bg-[#00E6A8] animate-pulse"></div>
+                        </div>
+                        <div class="mb-4 p-3 bg-[#1a1f2e]/50 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-1">Current Task</p>
+                            <p class="text-sm">Reviewing 5 applications</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-xs text-gray-400 mb-1">Tasks Today</p>
+                                <p class="text-2xl font-bold">23</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400 mb-1">Success Rate</p>
+                                <p class="text-2xl font-bold">87%</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Agent 3 -->
+                    <div class="glass rounded-xl p-6 border border-white/10 hover:border-[#00AEEF]/50 transition-all">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center text-2xl">
+                                    💬
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Customer Care</h3>
+                                    <p class="text-xs text-gray-400">Messages & Support</p>
+                                </div>
+                            </div>
+                            <div class="w-3 h-3 rounded-full bg-[#00E6A8] animate-pulse"></div>
+                        </div>
+                        <div class="mb-4 p-3 bg-[#1a1f2e]/50 rounded-lg">
+                            <p class="text-xs text-gray-400 mb-1">Current Task</p>
+                            <p class="text-sm">Handling 2 inquiries</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-xs text-gray-400 mb-1">Tasks Today</p>
+                                <p class="text-2xl font-bold">68</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400 mb-1">Success Rate</p>
+                                <p class="text-2xl font-bold">95%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Recommendations -->
+            <section>
+                <div class="glass rounded-xl p-6 border border-[#00AEEF]/30">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-full gradient-blue flex items-center justify-center text-2xl">
+                            💡
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold mb-2">AI Recommendations</h3>
+                            <ul class="space-y-2 text-gray-300 text-sm">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-[#00E6A8]">•</span>
+                                    <span>You have 8 leads that haven't been contacted in 48 hours. Would you like me to send follow-up messages?</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-[#00AEEF]">•</span>
+                                    <span>Your Google Ads conversion rate dropped 5% this week. I recommend adjusting your ad copy.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-[#EFBF45]">•</span>
+                                    <span>Consider activating the Dispatch Routine - it would save you 6 hours per week on crew coordination.</span>
+                                </li>
+                            </ul>
+                            <button class="mt-4 px-4 py-2 rounded-lg bg-[#00AEEF] text-white font-semibold hover:bg-[#00E6A8]">
+                                Take Action
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Floating AI Chat Button -->
+    <button onclick="alert('AI Chat Interface - Ask me anything about your business!')"
+            class="fixed bottom-6 right-6 w-16 h-16 rounded-full gradient-blue text-white shadow-2xl hover:scale-110 transition-all z-50 flex items-center justify-center text-2xl">
+        ✨
+        <span class="absolute -top-1 -right-1 w-4 h-4 bg-[#00E6A8] rounded-full animate-pulse"></span>
+    </button>
+</body>
+</html>
