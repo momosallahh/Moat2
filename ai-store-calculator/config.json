@@ -1,0 +1,105 @@
+{
+  "branding": {
+    "companyName": "SmileStore",
+    "tagline": "Premium Dental Care, Delivered",
+    "logo": "🦷",
+    "contactEmail": "hello@smilestore.com",
+    "contactPhone": "+1 (555) SMILE-NOW"
+  },
+  "theme": {
+    "colors": {
+      "background": "#0B0F14",
+      "accent": "#00AEEF",
+      "emerald": "#00E6A8",
+      "gold": "#EFBF45",
+      "textPrimary": "#FFFFFF",
+      "textSecondary": "#A9B1BC",
+      "glassCard": "rgba(255, 255, 255, 0.05)",
+      "glassCardHover": "rgba(255, 255, 255, 0.08)"
+    },
+    "fonts": {
+      "heading": "Poppins, sans-serif",
+      "body": "Inter, sans-serif"
+    },
+    "effects": {
+      "blur": "10px",
+      "borderRadius": "16px",
+      "glowColor": "rgba(0, 174, 239, 0.3)"
+    }
+  },
+  "features": {
+    "enableTwilio": true,
+    "enableTrello": true,
+    "enableSubscriptions": true,
+    "enableAdminDashboard": true,
+    "enableUpsells": true,
+    "enableDiscounts": true,
+    "requireEmailVerification": false,
+    "allowGuestCheckout": true
+  },
+  "checkout": {
+    "currency": "usd",
+    "taxRate": 0,
+    "freeShippingThreshold": 250,
+    "defaultShippingCost": 9.99,
+    "allowedPaymentMethods": ["card"],
+    "collectShippingAddress": true,
+    "collectBillingAddress": true
+  },
+  "sms": {
+    "templates": {
+      "ORDER_CONFIRM": "Thanks for your order with {{companyName}}! Your order #{{orderId}} is confirmed. Want to add a cleaning next week? Reply CLEAN.",
+      "WHITENING_UPSELL": "Keep your shade bright: add monthly gel refills for $49. Reply ADD to subscribe.",
+      "BRUSH_REFILL": "Heads wear out after ~90 days. Add a 4-pack auto-ship for $39? Reply ADD.",
+      "SUBSCRIPTION_CONFIRM": "Your {{productName}} subscription is active! Next delivery: {{nextDelivery}}. Manage anytime at {{manageUrl}}",
+      "APPOINTMENT_REMINDER": "Your cleaning appointment at {{companyName}} is coming up! Reply CONFIRM or call {{phone}}."
+    },
+    "triggers": {
+      "sendOrderConfirm": true,
+      "sendWhiteningUpsell": true,
+      "sendBrushRefillUpsell": true,
+      "sendAppointmentReminder": false
+    },
+    "replyHandlers": {
+      "ADD": "create_subscription",
+      "CLEAN": "book_appointment",
+      "CONFIRM": "confirm_appointment",
+      "STOP": "unsubscribe"
+    }
+  },
+  "trello": {
+    "boardName": "SmileStore Orders",
+    "lists": {
+      "newOrders": "New Orders",
+      "processing": "Processing",
+      "shipped": "Shipped",
+      "completed": "Completed"
+    },
+    "labels": {
+      "oneTime": "One-Time",
+      "subscription": "Subscription",
+      "highValue": "High Value ($250+)",
+      "upsellOpportunity": "Upsell"
+    },
+    "cardTemplate": {
+      "title": "Order #{{orderId}} - {{customerName}}",
+      "description": "**Customer:** {{customerName}}\n**Email:** {{customerEmail}}\n**Phone:** {{customerPhone}}\n\n**Items:**\n{{items}}\n\n**Total:** ${{total}}\n**Payment Status:** {{paymentStatus}}\n\n**Stripe Receipt:** {{receiptUrl}}\n**Order Date:** {{orderDate}}"
+    }
+  },
+  "admin": {
+    "password": "dental2024!",
+    "enableOrderSearch": true,
+    "enableBulkActions": true,
+    "showRevenueMetrics": true
+  },
+  "stripe": {
+    "mode": "test",
+    "successUrl": "/success?session_id={CHECKOUT_SESSION_ID}",
+    "cancelUrl": "/checkout?cancelled=true"
+  },
+  "meta": {
+    "version": "1.0.0",
+    "environment": "development",
+    "lastUpdated": "2024-01-15"
+  }
+}

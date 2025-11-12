@@ -1,0 +1,217 @@
+{
+  "categories": [
+    {
+      "id": "whitening",
+      "name": "Whitening & Cosmetic",
+      "icon": "✨",
+      "products": [
+        {
+          "id": "whitening-kit",
+          "name": "Professional Whitening Kit",
+          "description": "Dentist-grade whitening system with LED accelerator. Removes years of stains in just 7 days.",
+          "price": 149.99,
+          "image": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400",
+          "features": [
+            "14 treatments included",
+            "LED accelerator light",
+            "Enamel-safe formula",
+            "Visible results in 3 days"
+          ],
+          "type": "one-time",
+          "upsells": ["whitening-refill", "cleaning-bundle"]
+        },
+        {
+          "id": "whitening-refill",
+          "name": "Whitening Gel Refills",
+          "description": "Monthly gel refills to maintain your brilliant smile. Auto-delivered, never run out.",
+          "price": 49.99,
+          "recurringPrice": 44.99,
+          "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400",
+          "features": [
+            "8 gel syringes per month",
+            "Subscribe & save 10%",
+            "Free shipping",
+            "Cancel anytime"
+          ],
+          "type": "subscription",
+          "interval": "monthly"
+        },
+        {
+          "id": "whitening-strips",
+          "name": "Express Whitening Strips",
+          "description": "Quick 30-minute whitening strips for on-the-go touch-ups.",
+          "price": 39.99,
+          "image": "https://images.unsplash.com/photo-1598368195835-91e67f80c9d7?w=400",
+          "features": [
+            "28 strips (14-day supply)",
+            "No sensitivity formula",
+            "Dissolves completely",
+            "Works in 30 minutes"
+          ],
+          "type": "one-time"
+        }
+      ]
+    },
+    {
+      "id": "hygiene",
+      "name": "Hygiene Essentials",
+      "icon": "🦷",
+      "products": [
+        {
+          "id": "smart-brush",
+          "name": "AI Smart Toothbrush",
+          "description": "Sonic toothbrush with AI coaching, pressure sensors, and app connectivity.",
+          "price": 199.99,
+          "image": "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=400",
+          "features": [
+            "40,000 vibrations/min",
+            "Real-time coaching app",
+            "2-week battery life",
+            "3 brush heads included"
+          ],
+          "type": "one-time",
+          "upsells": ["brush-heads", "fluoride-rinse"]
+        },
+        {
+          "id": "brush-heads",
+          "name": "Replacement Brush Heads",
+          "description": "Premium brush heads delivered every 3 months. Never forget to replace.",
+          "price": 39.99,
+          "recurringPrice": 34.99,
+          "image": "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=400",
+          "features": [
+            "4-pack every 3 months",
+            "Subscribe & save 12%",
+            "Color-coded for family",
+            "Perfect fit guarantee"
+          ],
+          "type": "subscription",
+          "interval": "quarterly"
+        },
+        {
+          "id": "water-flosser",
+          "name": "Cordless Water Flosser",
+          "description": "Portable water flosser with 3 pressure modes and 300ml reservoir.",
+          "price": 79.99,
+          "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400",
+          "features": [
+            "Rechargeable battery",
+            "3 pressure settings",
+            "4 nozzle tips",
+            "Travel case included"
+          ],
+          "type": "one-time",
+          "upsells": ["fluoride-rinse"]
+        },
+        {
+          "id": "fluoride-rinse",
+          "name": "Clinical Fluoride Rinse",
+          "description": "Prescription-strength fluoride mouthwash. Strengthens enamel, prevents cavities.",
+          "price": 24.99,
+          "recurringPrice": 19.99,
+          "image": "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=400",
+          "features": [
+            "0.05% sodium fluoride",
+            "ADA approved",
+            "Mint flavor",
+            "Subscribe for 20% off"
+          ],
+          "type": "both",
+          "interval": "monthly"
+        }
+      ]
+    },
+    {
+      "id": "protection",
+      "name": "Protection & Comfort",
+      "icon": "🛡️",
+      "products": [
+        {
+          "id": "night-guard",
+          "name": "Custom Night Guard Kit",
+          "description": "Professional impression kit for a perfect-fit night guard. Protects against grinding.",
+          "price": 129.99,
+          "image": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=400",
+          "features": [
+            "Dental-lab quality",
+            "Custom molded fit",
+            "BPA-free material",
+            "Prepaid return box"
+          ],
+          "type": "one-time"
+        },
+        {
+          "id": "sensitivity-paste",
+          "name": "Sensitivity Relief Paste",
+          "description": "Fast-acting desensitizing paste. Relief in 60 seconds, lasts all day.",
+          "price": 34.99,
+          "image": "https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=400",
+          "features": [
+            "Clinically proven",
+            "Instant relief",
+            "Long-lasting protection",
+            "Pleasant mint taste"
+          ],
+          "type": "one-time"
+        },
+        {
+          "id": "cleaning-bundle",
+          "name": "Professional Cleaning Voucher",
+          "description": "Prepaid voucher for in-office professional cleaning and exam.",
+          "price": 199.99,
+          "image": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400",
+          "features": [
+            "Full exam + cleaning",
+            "Digital X-rays",
+            "Dentist consultation",
+            "Valid 12 months"
+          ],
+          "type": "one-time"
+        }
+      ]
+    }
+  ],
+  "upsellRules": [
+    {
+      "trigger": "whitening-kit",
+      "suggest": ["whitening-refill", "cleaning-bundle"],
+      "message": "Keep your smile bright! Add monthly refills and a cleaning."
+    },
+    {
+      "trigger": "smart-brush",
+      "suggest": ["brush-heads", "fluoride-rinse"],
+      "message": "Complete your routine with auto-delivery brush heads and fluoride rinse."
+    },
+    {
+      "trigger": "subscription",
+      "discount": "SUB10",
+      "amount": 10,
+      "message": "Subscription discount applied! Save 10% on your order."
+    },
+    {
+      "trigger": "cartTotal>250",
+      "badge": "FREE_SHIPPING",
+      "message": "Congrats! You've unlocked FREE shipping."
+    }
+  ],
+  "discountCodes": [
+    {
+      "code": "SUB10",
+      "type": "percentage",
+      "value": 10,
+      "description": "10% off for subscription orders"
+    },
+    {
+      "code": "WELCOME20",
+      "type": "percentage",
+      "value": 20,
+      "description": "20% off first order"
+    },
+    {
+      "code": "FLASH50",
+      "type": "fixed",
+      "value": 50,
+      "description": "$50 off orders over $200"
+    }
+  ]
+}
