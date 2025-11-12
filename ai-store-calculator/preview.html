@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Store Calculator - Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0B0F14;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-hover:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(0, 174, 239, 0.3);
+        }
+        .gradient-btn {
+            background: linear-gradient(135deg, #00AEEF 0%, #00E6A8 100%);
+        }
+        .gradient-btn:hover {
+            box-shadow: 0 8px 30px rgba(0, 174, 239, 0.4);
+            transform: translateY(-2px);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00AEEF;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- Header -->
+    <header class="sticky top-0 z-30 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="text-3xl">🦷</span>
+                    <div>
+                        <h1 class="text-2xl font-bold bg-gradient-to-r from-[#00AEEF] to-[#00E6A8] bg-clip-text text-transparent">
+                            SmileStore
+                        </h1>
+                        <p class="text-xs text-[#A9B1BC]">Premium Dental Care</p>
+                    </div>
+                </div>
+                <button onclick="toggleCart()" class="relative glass glass-hover px-4 py-3 rounded-xl flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                    <span class="font-semibold">Cart</span>
+                    <span id="cart-count" class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#00E6A8] text-white text-xs font-bold flex items-center justify-center hidden">
+                        0
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-20 w-64 h-64 bg-[#00AEEF] rounded-full blur-3xl float-animation"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-[#00E6A8] rounded-full blur-3xl float-animation" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/2 w-80 h-80 bg-[#EFBF45] rounded-full blur-3xl float-animation" style="animation-delay: 4s;"></div>
+        </div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
+                <span class="text-xl">✨</span>
+                <span class="text-sm font-medium text-[#A9B1BC]">AI-Powered Dental Store</span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#00AEEF] via-[#00E6A8] to-[#EFBF45] bg-clip-text text-transparent">
+                Premium Dental Care,<br>Delivered to Your Door
+            </h1>
+
+            <p class="text-xl md:text-2xl text-[#A9B1BC] mb-8 max-w-3xl mx-auto">
+                Professional-grade products, expert recommendations, and smart subscriptions to keep your smile brilliant.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-6 mb-10">
+                <div class="flex items-center gap-2">
+                    <span class="text-[#00E6A8]">🛡️</span>
+                    <span class="text-sm font-medium">Dentist Approved</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-[#EFBF45]">⚡</span>
+                    <span class="text-sm font-medium">Fast Delivery</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-[#00AEEF]">✨</span>
+                    <span class="text-sm font-medium">Smart Recommendations</span>
+                </div>
+            </div>
+
+            <button onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})"
+                    class="gradient-btn px-8 py-4 rounded-2xl text-white font-semibold text-lg shadow-2xl transition-all duration-300">
+                Shop Premium Products
+            </button>
+
+            <p class="mt-6 text-sm text-[#A9B1BC]">
+                ✓ Free shipping over $250 • ✓ Subscribe & save 10% • ✓ 30-day money-back guarantee
+            </p>
+        </div>
+    </div>
+
+    <!-- Products -->
+    <div id="products" class="max-w-7xl mx-auto px-6 py-16">
+        <!-- Category 1: Whitening & Cosmetic -->
+        <div class="mb-16">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="text-4xl">✨</span>
+                <div>
+                    <h2 class="text-3xl font-bold">Whitening & Cosmetic</h2>
+                    <p class="text-[#A9B1BC]">Premium dental products for your perfect smile</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Product 1 -->
+                <div class="glass glass-hover rounded-2xl overflow-hidden group">
+                    <div class="relative h-48 overflow-hidden bg-gradient-to-br from-[#00AEEF]/10 to-[#00E6A8]/10">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Professional Whitening Kit</h3>
+                        <p class="text-sm text-[#A9B1BC] mb-4 line-clamp-2">Dentist-grade whitening system with LED accelerator. Removes years of stains in just 7 days.</p>
+                        <div class="mb-4">
+                            <span class="text-3xl font-bold text-[#00E6A8]">$149.99</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="addToCart('Professional Whitening Kit', 149.99)"
+                                    class="flex-1 gradient-btn px-4 py-3 rounded-xl text-white font-semibold flex items-center justify-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                                Add to Cart
+                            </button>
+                            <button class="glass glass-hover px-4 py-3 rounded-xl">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="glass glass-hover rounded-2xl overflow-hidden group">
+                    <div class="relative h-48 overflow-hidden bg-gradient-to-br from-[#00AEEF]/10 to-[#00E6A8]/10">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#00E6A8] text-white text-xs font-semibold">
+                            Subscribe & Save
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Whitening Gel Refills</h3>
+                        <p class="text-sm text-[#A9B1BC] mb-4 line-clamp-2">Monthly gel refills to maintain your brilliant smile. Auto-delivered, never run out.</p>
+                        <div class="mb-4">
+                            <span class="text-3xl font-bold text-[#00E6A8]">$44.99</span>
+                            <span class="text-sm text-[#A9B1BC]"> / month</span>
+                        </div>
+                        <div class="flex gap-2 mb-4">
+                            <button class="flex-1 px-3 py-2 rounded-lg text-sm font-medium glass text-[#A9B1BC] hover:text-white">
+                                One-Time
+                            </button>
+                            <button class="flex-1 px-3 py-2 rounded-lg text-sm font-medium bg-[#00E6A8] text-white">
+                                Subscribe
+                            </button>
+                        </div>
+                        <button onclick="addToCart('Whitening Gel Refills (Subscription)', 44.99)"
+                                class="w-full gradient-btn px-4 py-3 rounded-xl text-white font-semibold">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="glass glass-hover rounded-2xl overflow-hidden group">
+                    <div class="relative h-48 overflow-hidden bg-gradient-to-br from-[#00AEEF]/10 to-[#00E6A8]/10">
+                        <img src="https://images.unsplash.com/photo-1598368195835-91e67f80c9d7?w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Express Whitening Strips</h3>
+                        <p class="text-sm text-[#A9B1BC] mb-4 line-clamp-2">Quick 30-minute whitening strips for on-the-go touch-ups.</p>
+                        <div class="mb-4">
+                            <span class="text-3xl font-bold text-[#00E6A8]">$39.99</span>
+                        </div>
+                        <button onclick="addToCart('Express Whitening Strips', 39.99)"
+                                class="w-full gradient-btn px-4 py-3 rounded-xl text-white font-semibold">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 2: Hygiene Essentials -->
+        <div class="mb-16">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="text-4xl">🦷</span>
+                <div>
+                    <h2 class="text-3xl font-bold">Hygiene Essentials</h2>
+                    <p class="text-[#A9B1BC]">Daily care products for optimal oral health</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Product 4 -->
+                <div class="glass glass-hover rounded-2xl overflow-hidden group">
+                    <div class="relative h-48 overflow-hidden bg-gradient-to-br from-[#00AEEF]/10 to-[#00E6A8]/10">
+                        <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">AI Smart Toothbrush</h3>
+                        <p class="text-sm text-[#A9B1BC] mb-4 line-clamp-2">Sonic toothbrush with AI coaching and app connectivity.</p>
+                        <div class="mb-4">
+                            <span class="text-3xl font-bold text-[#00E6A8]">$199.99</span>
+                        </div>
+                        <button onclick="addToCart('AI Smart Toothbrush', 199.99)"
+                                class="w-full gradient-btn px-4 py-3 rounded-xl text-white font-semibold">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="glass glass-hover rounded-2xl overflow-hidden group">
+                    <div class="relative h-48 overflow-hidden bg-gradient-to-br from-[#00AEEF]/10 to-[#00E6A8]/10">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Cordless Water Flosser</h3>
+                        <p class="text-sm text-[#A9B1BC] mb-4 line-clamp-2">Portable water flosser with 3 pressure modes.</p>
+                        <div class="mb-4">
+                            <span class="text-3xl font-bold text-[#00E6A8]">$79.99</span>
+                        </div>
+                        <button onclick="addToCart('Cordless Water Flosser', 79.99)"
+                                class="w-full gradient-btn px-4 py-3 rounded-xl text-white font-semibold">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="glass glass-hover rounded-2xl overflow-hidden group">
+                    <div class="relative h-48 overflow-hidden bg-gradient-to-br from-[#00AEEF]/10 to-[#00E6A8]/10">
+                        <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#00E6A8] text-white text-xs font-semibold">
+                            Subscribe & Save
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Clinical Fluoride Rinse</h3>
+                        <p class="text-sm text-[#A9B1BC] mb-4 line-clamp-2">Prescription-strength fluoride mouthwash.</p>
+                        <div class="mb-4">
+                            <span class="text-3xl font-bold text-[#00E6A8]">$19.99</span>
+                            <span class="text-sm text-[#A9B1BC]"> / month</span>
+                        </div>
+                        <button onclick="addToCart('Clinical Fluoride Rinse (Subscription)', 19.99)"
+                                class="w-full gradient-btn px-4 py-3 rounded-xl text-white font-semibold">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden">
+        <div class="fixed right-0 top-0 h-full w-full max-w-md bg-[#0B0F14] border-l border-white/10 z-50 flex flex-col shadow-2xl">
+            <div class="glass border-b border-white/10 p-6 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <svg class="w-6 h-6 text-[#00AEEF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    <h2 class="text-2xl font-bold">Your Cart</h2>
+                    <span id="cart-badge" class="px-2 py-1 rounded-full bg-[#00AEEF] text-white text-xs font-semibold hidden">0</span>
+                </div>
+                <button onclick="toggleCart()" class="p-2 glass-hover rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="cart-items" class="flex-1 overflow-y-auto p-6">
+                <div class="flex flex-col items-center justify-center h-full text-center">
+                    <svg class="w-16 h-16 text-[#A9B1BC] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    <p class="text-lg font-semibold mb-2">Your cart is empty</p>
+                    <p class="text-sm text-[#A9B1BC]">Add some products to get started</p>
+                </div>
+            </div>
+
+            <div id="cart-footer" class="glass border-t border-white/10 p-6 hidden">
+                <div class="space-y-4 mb-4">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-[#A9B1BC]">Subtotal</span>
+                        <span class="font-semibold" id="subtotal">$0.00</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-[#A9B1BC]">Shipping</span>
+                        <span class="font-semibold" id="shipping">$9.99</span>
+                    </div>
+                    <div class="flex justify-between text-lg font-bold border-t border-white/10 pt-4">
+                        <span>Total</span>
+                        <span class="text-[#00E6A8]" id="total">$0.00</span>
+                    </div>
+                </div>
+                <button onclick="alert('Stripe checkout would open here!')"
+                        class="w-full gradient-btn px-6 py-4 rounded-xl text-white font-semibold text-lg">
+                    Proceed to Checkout
+                </button>
+                <div class="flex items-center justify-center gap-4 text-xs text-[#A9B1BC] mt-4">
+                    <span>🔒 Secure Checkout</span>
+                    <span>📦 Fast Delivery</span>
+                    <span>↩️ Easy Returns</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            document.getElementById('cart-drawer').classList.toggle('hidden');
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price, quantity: 1 });
+            updateCart();
+
+            // Show cart automatically
+            document.getElementById('cart-drawer').classList.remove('hidden');
+        }
+
+        function updateCart() {
+            const cartCount = document.getElementById('cart-count');
+            const cartBadge = document.getElementById('cart-badge');
+            const cartItems = document.getElementById('cart-items');
+            const cartFooter = document.getElementById('cart-footer');
+
+            if (cart.length === 0) {
+                cartCount.classList.add('hidden');
+                cartBadge.classList.add('hidden');
+                cartFooter.classList.add('hidden');
+                cartItems.innerHTML = `
+                    <div class="flex flex-col items-center justify-center h-full text-center">
+                        <svg class="w-16 h-16 text-[#A9B1BC] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                        <p class="text-lg font-semibold mb-2">Your cart is empty</p>
+                        <p class="text-sm text-[#A9B1BC]">Add some products to get started</p>
+                    </div>
+                `;
+                return;
+            }
+
+            cartCount.textContent = cart.length;
+            cartCount.classList.remove('hidden');
+            cartBadge.textContent = cart.length;
+            cartBadge.classList.remove('hidden');
+            cartFooter.classList.remove('hidden');
+
+            const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+            const shipping = subtotal > 250 ? 0 : 9.99;
+            const total = subtotal + shipping;
+
+            document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('shipping').textContent = subtotal > 250 ? 'FREE' : `$${shipping.toFixed(2)}`;
+            document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+
+            cartItems.innerHTML = cart.map((item, index) => `
+                <div class="glass rounded-xl p-4 mb-4">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-sm mb-1">${item.name}</h3>
+                            <p class="text-[#00E6A8] font-bold">$${item.price.toFixed(2)}</p>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="p-1 hover:text-red-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+    </script>
+</body>
+</html>
