@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T-Fa Admin Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .login-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .login-box {
+      background: white;
+      padding: 3rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-box h1 {
+      margin-bottom: 2rem;
+      color: #D7A86E;
+      text-align: center;
+    }
+
+    .dashboard {
+      display: none;
+    }
+
+    .header {
+      background: #111;
+      color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      color: #D7A86E;
+      font-size: 1.5rem;
+    }
+
+    .btn {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+
+    .btn-primary {
+      background: #D7A86E;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #C99A5F;
+    }
+
+    .btn-secondary {
+      background: #111;
+      color: white;
+    }
+
+    .btn-danger {
+      background: #e74c3c;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background: #c0392b;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .product-card h3 {
+      color: #D7A86E;
+      margin-bottom: 1rem;
+    }
+
+    .product-card p {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .product-card .price {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #D7A86E;
+      margin: 1rem 0;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .modal-header h2 {
+      color: #D7A86E;
+    }
+
+    .close-modal {
+      font-size: 2rem;
+      cursor: pointer;
+      color: #999;
+    }
+
+    .close-modal:hover {
+      color: #333;
+    }
+
+    .alert {
+      padding: 1rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .alert-success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .alert-error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .sizes-input {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .size-tag {
+      padding: 0.5rem 1rem;
+      background: #f0f0f0;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .size-tag button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #e74c3c;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login Screen -->
+  <div id="loginScreen" class="login-container">
+    <div class="login-box">
+      <h1>T-FA Admin</h1>
+      <div id="loginAlert"></div>
+      <form id="loginForm">
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" id="username" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%">Login</button>
+      </form>
+      <p style="margin-top: 1rem; text-align: center; color: #999; font-size: 0.9rem;">
+        Default: admin / admin123
+      </p>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard" class="dashboard">
+    <div class="header">
+      <h1>T-FA Admin Dashboard</h1>
+      <div>
+        <span id="userDisplay" style="margin-right: 1.5rem;"></span>
+        <button class="btn btn-secondary" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <h2>Products</h2>
+        <button class="btn btn-primary" onclick="openAddProductModal()">+ Add New Product</button>
+      </div>
+
+      <div id="alert"></div>
+      <div id="productsGrid" class="products-grid"></div>
+    </div>
+  </div>
+
+  <!-- Product Modal -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Add Product</h2>
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+      </div>
+
+      <form id="productForm">
+        <input type="hidden" id="productId">
+
+        <div class="form-group">
+          <label>Product Name *</label>
+          <input type="text" id="productName" required>
+        </div>
+
+        <div class="form-group">
+          <label>Price (USD) *</label>
+          <input type="number" id="productPrice" step="0.01" required>
+        </div>
+
+        <div class="form-group">
+          <label>Short Description *</label>
+          <textarea id="productDescription" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Full Description</label>
+          <textarea id="productFullDescription"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Sizes (comma separated) *</label>
+          <input type="text" id="productSizes" placeholder="e.g., XS, S, M, L, XL" required>
+        </div>
+
+        <div class="form-group">
+          <label>Materials</label>
+          <input type="text" id="productMaterials">
+        </div>
+
+        <div class="form-group">
+          <label>Care Instructions</label>
+          <textarea id="productCare"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Story</label>
+          <textarea id="productStory"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Category</label>
+          <select id="productCategory">
+            <option value="apparel">Apparel</option>
+            <option value="accessories">Accessories</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="productInStock" checked>
+            In Stock
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>Image URLs (comma separated)</label>
+          <input type="text" id="productImages" placeholder="image1.jpg, image2.jpg">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Product</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const API_BASE = window.location.origin;
+    let authToken = localStorage.getItem('tfa_admin_token');
+    let currentEditId = null;
+
+    // Check auth on load
+    if (authToken) {
+      verifyToken();
+    }
+
+    // Login
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        const response = await fetch(`${API_BASE}/api/auth/login`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          authToken = data.token;
+          localStorage.setItem('tfa_admin_token', authToken);
+          showDashboard(data.user);
+        } else {
+          showAlert('loginAlert', data.error, 'error');
+        }
+      } catch (error) {
+        showAlert('loginAlert', 'Login failed: ' + error.message, 'error');
+      }
+    });
+
+    // Verify token
+    async function verifyToken() {
+      try {
+        const response = await fetch(`${API_BASE}/api/auth/verify`, {
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          showDashboard(data.user);
+        } else {
+          logout();
+        }
+      } catch (error) {
+        logout();
+      }
+    }
+
+    // Show dashboard
+    function showDashboard(user) {
+      document.getElementById('loginScreen').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+      document.getElementById('userDisplay').textContent = `Welcome, ${user.username}`;
+      loadProducts();
+    }
+
+    // Logout
+    function logout() {
+      authToken = null;
+      localStorage.removeItem('tfa_admin_token');
+      document.getElementById('loginScreen').style.display = 'flex';
+      document.getElementById('dashboard').style.display = 'none';
+    }
+
+    // Load products
+    async function loadProducts() {
+      try {
+        const response = await fetch(`${API_BASE}/api/products`);
+        const products = await response.json();
+
+        const grid = document.getElementById('productsGrid');
+        grid.innerHTML = products.map(product => `
+          <div class="product-card">
+            <h3>${product.name}</h3>
+            <p class="price">$${product.price}</p>
+            <p>${product.description}</p>
+            <p><strong>Sizes:</strong> ${product.sizes.join(', ')}</p>
+            <p><strong>Status:</strong> ${product.inStock ? '✅ In Stock' : '❌ Out of Stock'}</p>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="editProduct('${product.id}')">Edit</button>
+              <button class="btn btn-danger" onclick="deleteProduct('${product.id}')">Delete</button>
+            </div>
+          </div>
+        `).join('');
+      } catch (error) {
+        showAlert('alert', 'Failed to load products: ' + error.message, 'error');
+      }
+    }
+
+    // Open add product modal
+    function openAddProductModal() {
+      currentEditId = null;
+      document.getElementById('modalTitle').textContent = 'Add New Product';
+      document.getElementById('productForm').reset();
+      document.getElementById('productModal').classList.add('active');
+    }
+
+    // Edit product
+    async function editProduct(id) {
+      currentEditId = id;
+
+      try {
+        const response = await fetch(`${API_BASE}/api/products/${id}`);
+        const product = await response.json();
+
+        document.getElementById('modalTitle').textContent = 'Edit Product';
+        document.getElementById('productId').value = product.id;
+        document.getElementById('productName').value = product.name;
+        document.getElementById('productPrice').value = product.price;
+        document.getElementById('productDescription').value = product.description;
+        document.getElementById('productFullDescription').value = product.fullDescription || '';
+        document.getElementById('productSizes').value = product.sizes.join(', ');
+        document.getElementById('productMaterials').value = product.materials || '';
+        document.getElementById('productCare').value = product.care || '';
+        document.getElementById('productStory').value = product.story || '';
+        document.getElementById('productCategory').value = product.category || 'apparel';
+        document.getElementById('productInStock').checked = product.inStock;
+        document.getElementById('productImages').value = (product.images || []).join(', ');
+
+        document.getElementById('productModal').classList.add('active');
+      } catch (error) {
+        showAlert('alert', 'Failed to load product: ' + error.message, 'error');
+      }
+    }
+
+    // Save product
+    document.getElementById('productForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const product = {
+        id: currentEditId || Date.now().toString(),
+        name: document.getElementById('productName').value,
+        price: parseFloat(document.getElementById('productPrice').value),
+        description: document.getElementById('productDescription').value,
+        fullDescription: document.getElementById('productFullDescription').value,
+        sizes: document.getElementById('productSizes').value.split(',').map(s => s.trim()),
+        materials: document.getElementById('productMaterials').value,
+        care: document.getElementById('productCare').value,
+        story: document.getElementById('productStory').value,
+        category: document.getElementById('productCategory').value,
+        inStock: document.getElementById('productInStock').checked,
+        images: document.getElementById('productImages').value.split(',').map(s => s.trim()).filter(s => s)
+      };
+
+      try {
+        const url = currentEditId
+          ? `${API_BASE}/api/products/${currentEditId}`
+          : `${API_BASE}/api/products`;
+
+        const method = currentEditId ? 'PUT' : 'POST';
+
+        const response = await fetch(url, {
+          method,
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+          },
+          body: JSON.stringify(product)
+        });
+
+        if (response.ok) {
+          showAlert('alert', 'Product saved successfully!', 'success');
+          closeModal();
+          loadProducts();
+        } else {
+          const error = await response.json();
+          showAlert('alert', error.error, 'error');
+        }
+      } catch (error) {
+        showAlert('alert', 'Failed to save product: ' + error.message, 'error');
+      }
+    });
+
+    // Delete product
+    async function deleteProduct(id) {
+      if (!confirm('Are you sure you want to delete this product?')) return;
+
+      try {
+        const response = await fetch(`${API_BASE}/api/products/${id}`, {
+          method: 'DELETE',
+          headers: { 'Authorization': `Bearer ${authToken}` }
+        });
+
+        if (response.ok) {
+          showAlert('alert', 'Product deleted successfully!', 'success');
+          loadProducts();
+        } else {
+          const error = await response.json();
+          showAlert('alert', error.error, 'error');
+        }
+      } catch (error) {
+        showAlert('alert', 'Failed to delete product: ' + error.message, 'error');
+      }
+    }
+
+    // Close modal
+    function closeModal() {
+      document.getElementById('productModal').classList.remove('active');
+    }
+
+    // Show alert
+    function showAlert(containerId, message, type) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+      setTimeout(() => { container.innerHTML = ''; }, 5000);
+    }
+  </script>
+
+</body>
+</html>
