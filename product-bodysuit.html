@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Bodysuit — The Rebirth | T-Fa</title>
+  <meta name="description" content="Transformation embodied in fabric. The Bodysuit represents the journey from loss to healing, from darkness to light.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-product-id="bodysuit">
+
+  <!-- Header / Navigation -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">T-FA</a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="custom-design.html">Custom Design</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-icons">
+        <button id="cartBtn" aria-label="Shopping Cart">
+          🛍️
+          <span class="cart-count">0</span>
+        </button>
+        <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Product Page -->
+  <div class="product-page">
+    <div class="product-container">
+      <!-- Product Images -->
+      <div class="product-images">
+        <div class="main-product-image" style="background: linear-gradient(135deg, #000000 0%, #D7A86E 100%); display: flex; align-items: center; justify-content: center; font-size: 8rem; color: white;">
+          ✨
+        </div>
+
+        <div class="thumbnail-images">
+          <div class="thumbnail active" style="background: linear-gradient(135deg, #000000 0%, #D7A86E 100%); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">
+            ✨
+          </div>
+          <div class="thumbnail" style="background: linear-gradient(135deg, #111111 0%, #F7E8E1 100%); display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+            ✨
+          </div>
+          <div class="thumbnail" style="background: linear-gradient(135deg, #D7A86E 0%, #000000 100%); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">
+            ✨
+          </div>
+          <div class="thumbnail" style="background: linear-gradient(135deg, #F7E8E1 0%, #111111 100%); display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+            ✨
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Details -->
+      <div class="product-details">
+        <h1 class="product-title">The Bodysuit — The Rebirth</h1>
+        <p class="product-price-large">$495</p>
+
+        <div class="product-description-full">
+          <p>
+            <strong>Transformation embodied in fabric.</strong>
+          </p>
+          <p>
+            The Bodysuit represents the journey from loss to healing, from darkness to light.
+            It is the cocoon of transformation — the metamorphosis from grief to strength.
+          </p>
+          <p>
+            Sculpted from Italian stretch jersey, The Bodysuit is a second skin that honors the body's
+            journey through pain and rebirth. The architectural cut creates a silhouette that is both
+            powerful and vulnerable, strong yet tender. This is the piece that holds you as you transform.
+          </p>
+        </div>
+
+        <!-- Size Selector -->
+        <div class="size-selector">
+          <label>Select Size:</label>
+          <div class="size-options">
+            <button class="size-option" data-size="XS">XS</button>
+            <button class="size-option" data-size="S">S</button>
+            <button class="size-option" data-size="M">M</button>
+            <button class="size-option" data-size="L">L</button>
+            <button class="size-option" data-size="XL">XL</button>
+          </div>
+        </div>
+
+        <!-- Quantity Selector -->
+        <div class="quantity-selector">
+          <label>Quantity:</label>
+          <div class="quantity-controls">
+            <button class="quantity-btn decrease">−</button>
+            <span class="quantity-display">1</span>
+            <button class="quantity-btn increase">+</button>
+          </div>
+        </div>
+
+        <!-- Add to Cart -->
+        <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+
+        <!-- Size Guide Link -->
+        <div class="size-guide-link">
+          <a href="#" onclick="openSizeGuide(); return false;">View Size Guide</a>
+        </div>
+
+        <!-- Product Meta -->
+        <div class="product-meta">
+          <div class="meta-item">
+            <span class="meta-label">Materials:</span>
+            <span>Italian stretch jersey, invisible zipper closure</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Care:</span>
+            <span>Hand wash cold. Lay flat to dry.</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Story:</span>
+            <span>The Rebirth — transformation from grief to strength</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Complete the Story Section -->
+    <section class="upsell-section">
+      <h2>Complete the Story</h2>
+      <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+        The Bodysuit is transformative alone, but becomes complete when paired with The Hat and The Two-in-One.
+      </p>
+
+      <div class="product-grid">
+        <!-- The Hat -->
+        <div class="product-card" onclick="window.location.href='product-hat.html'">
+          <div class="product-image-wrapper">
+            <div class="product-image" style="background: linear-gradient(135deg, #EDE5D9 0%, #D7A86E 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+              🎩
+            </div>
+            <div class="product-overlay">
+              <button class="quick-view-btn">View Details</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">The Hat — The Beginning</h3>
+            <p class="product-description">
+              The iconic piece where it all began.
+            </p>
+            <p class="product-price">$295</p>
+          </div>
+        </div>
+
+        <!-- Two-in-One -->
+        <div class="product-card" onclick="window.location.href='product-two-in-one.html'">
+          <div class="product-image-wrapper">
+            <div class="product-image" style="background: linear-gradient(135deg, #F7E8E1 0%, #111111 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+              ♾️
+            </div>
+            <div class="product-overlay">
+              <button class="quick-view-btn">View Details</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Two-in-One Pants & Skirt — The Unity</h3>
+            <p class="product-description">
+              Duality and unity. The choice defines your story.
+            </p>
+            <p class="product-price">$595</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>T-FA</h3>
+        <p style="color: rgba(255,255,255,0.8); margin-top: 1rem;">
+          Fashion born from love, loss, and rebirth.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="shop.html">All Products</a></li>
+          <li><a href="product-hat.html">The Hat</a></li>
+          <li><a href="product-bodysuit.html">The Bodysuit</a></li>
+          <li><a href="product-two-in-one.html">Two-in-One</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>About</h3>
+        <ul>
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="custom-design.html">Custom Design</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Care Instructions</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 T-Fa. All rights reserved. Designed with love and memory.</p>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Drawer -->
+  <div class="cart-overlay"></div>
+  <div class="cart-drawer">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="close-cart" aria-label="Close Cart">✕</button>
+    </div>
+
+    <div class="cart-items"></div>
+
+    <div class="cart-empty" style="display: block;">
+      <p>Your cart is empty</p>
+      <a href="shop.html" class="btn btn-primary" style="margin-top: 2rem;">Continue Shopping</a>
+    </div>
+
+    <div class="cart-footer" style="display: none;">
+      <div class="cart-total">
+        <span class="cart-total-label">Total:</span>
+        <span class="cart-total-amount">$0.00</span>
+      </div>
+      <button class="btn btn-primary checkout-btn" onclick="alert('Checkout functionality would be integrated with payment processor')">
+        Proceed to Checkout
+      </button>
+    </div>
+  </div>
+
+  <!-- AI Stylist Panel -->
+  <div class="ai-stylist">
+    <div class="ai-stylist-header">
+      <h3>💬 Ask Anna AI</h3>
+      <button class="close-ai" aria-label="Close AI Stylist">✕</button>
+    </div>
+
+    <div class="ai-chat-messages"></div>
+
+    <div class="ai-input-area">
+      <form id="aiChatForm" class="ai-input-form">
+        <input
+          type="text"
+          id="aiInput"
+          class="ai-input"
+          placeholder="Ask about styling, sizing, or our story..."
+          required
+        >
+        <button type="submit" class="ai-send-btn">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- AI Stylist Toggle Button -->
+  <button class="ai-toggle-btn" id="aiToggleBtn" aria-label="Open AI Stylist">
+    💬
+  </button>
+
+  <!-- Size Guide Modal -->
+  <div class="modal" id="sizeGuideModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeSizeGuide()" aria-label="Close">✕</button>
+      <div class="modal-body">
+        <h3>Bodysuit Size Guide</h3>
+        <p style="margin-bottom: 1.5rem; color: var(--charcoal);">
+          Measure bust at fullest point, waist at natural waistline, and hips at fullest point.
+        </p>
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--charcoal);">
+              <th style="padding: 1rem; text-align: left;">Size</th>
+              <th style="padding: 1rem; text-align: left;">Bust</th>
+              <th style="padding: 1rem; text-align: left;">Waist</th>
+              <th style="padding: 1rem; text-align: left;">Hips</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid rgba(0,0,0,0.1);">
+              <td style="padding: 1rem; font-weight: 600;">XS</td>
+              <td style="padding: 1rem;">32"</td>
+              <td style="padding: 1rem;">24"</td>
+              <td style="padding: 1rem;">34"</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(0,0,0,0.1);">
+              <td style="padding: 1rem; font-weight: 600;">S</td>
+              <td style="padding: 1rem;">34"</td>
+              <td style="padding: 1rem;">26"</td>
+              <td style="padding: 1rem;">36"</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(0,0,0,0.1);">
+              <td style="padding: 1rem; font-weight: 600;">M</td>
+              <td style="padding: 1rem;">36"</td>
+              <td style="padding: 1rem;">28"</td>
+              <td style="padding: 1rem;">38"</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(0,0,0,0.1);">
+              <td style="padding: 1rem; font-weight: 600;">L</td>
+              <td style="padding: 1rem;">38"</td>
+              <td style="padding: 1rem;">30"</td>
+              <td style="padding: 1rem;">40"</td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; font-weight: 600;">XL</td>
+              <td style="padding: 1rem;">40"</td>
+              <td style="padding: 1rem;">32"</td>
+              <td style="padding: 1rem;">42"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/product.js"></script>
+  <script src="js/ai-stylist.js"></script>
+
+</body>
+</html>

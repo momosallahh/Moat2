@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | T-Fa</title>
+  <meta name="description" content="Get in touch with T-Fa. We're here to answer your questions and help you find your perfect piece.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">T-FA</a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="custom-design.html">Custom Design</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-icons">
+        <button id="cartBtn" aria-label="Shopping Cart">
+          🛍️
+          <span class="cart-count">0</span>
+        </button>
+        <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contact Hero -->
+  <section class="hero" style="height: 50vh; background: linear-gradient(135deg, var(--soft-beige) 0%, var(--rose-tint) 100%);">
+    <div class="hero-content">
+      <h1>Get In Touch</h1>
+      <p class="hero-subtitle">
+        We'd love to hear from you
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <section style="padding: 6rem 2rem;">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;">
+
+      <!-- Contact Form -->
+      <div>
+        <h2 style="margin-bottom: 2rem;">Send Us a Message</h2>
+        <p style="margin-bottom: 3rem; color: var(--charcoal);">
+          Whether you have questions about our collection, need styling advice, or want to share
+          your story with us — we're here to listen.
+        </p>
+
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="emailContact">Email *</label>
+            <input type="email" id="emailContact" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <select id="subject" name="subject" required>
+              <option value="">Select a subject</option>
+              <option value="general">General Inquiry</option>
+              <option value="order">Order Question</option>
+              <option value="custom">Custom Design</option>
+              <option value="styling">Styling Advice</option>
+              <option value="press">Press & Media</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell us what's on your mind..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Information -->
+      <div>
+        <h2 style="margin-bottom: 2rem;">Contact Information</h2>
+
+        <div style="margin-bottom: 3rem;">
+          <h3 style="color: var(--warm-gold); margin-bottom: 1rem;">Email</h3>
+          <p style="font-size: 1.1rem;">
+            <a href="mailto:hello@t-fa.com" style="color: var(--charcoal); text-decoration: none;">
+              hello@t-fa.com
+            </a>
+          </p>
+          <p style="color: var(--charcoal); margin-top: 0.5rem; font-size: 0.95rem;">
+            We typically respond within 24 hours
+          </p>
+        </div>
+
+        <div style="margin-bottom: 3rem;">
+          <h3 style="color: var(--warm-gold); margin-bottom: 1rem;">Customer Service Hours</h3>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+          <p>Saturday: 10:00 AM - 4:00 PM EST</p>
+          <p>Sunday: Closed</p>
+        </div>
+
+        <div style="margin-bottom: 3rem;">
+          <h3 style="color: var(--warm-gold); margin-bottom: 1rem;">Atelier Location</h3>
+          <p>By appointment only</p>
+          <p style="margin-top: 0.5rem; font-size: 0.95rem; color: var(--charcoal);">
+            Visit our atelier to experience the collection in person and discuss custom designs.
+            Please schedule an appointment in advance.
+          </p>
+        </div>
+
+        <div style="margin-bottom: 3rem;">
+          <h3 style="color: var(--warm-gold); margin-bottom: 1rem;">Follow Our Journey</h3>
+          <div style="display: flex; gap: 1.5rem; font-size: 1.8rem;">
+            <a href="#" style="color: var(--charcoal); transition: color 0.3s;">📷</a>
+            <a href="#" style="color: var(--charcoal); transition: color 0.3s;">📘</a>
+            <a href="#" style="color: var(--charcoal); transition: color 0.3s;">🐦</a>
+            <a href="#" style="color: var(--charcoal); transition: color 0.3s;">📌</a>
+          </div>
+        </div>
+
+        <div style="padding: 2rem; background: var(--soft-beige); border-left: 4px solid var(--warm-gold);">
+          <h4 style="margin-bottom: 1rem; color: var(--charcoal);">Need Immediate Assistance?</h4>
+          <p style="margin-bottom: 1rem;">
+            Chat with Anna AI, our personal stylist, for instant help with sizing, styling, and product questions.
+          </p>
+          <button
+            class="btn btn-secondary"
+            onclick="document.getElementById('aiToggleBtn').click()"
+            style="width: 100%;"
+          >
+            Chat with Anna AI
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section style="padding: 6rem 2rem; background: var(--soft-beige);">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Frequently Asked Questions</h2>
+
+      <div style="display: grid; gap: 2rem;">
+        <div style="background: white; padding: 2rem; border-left: 3px solid var(--warm-gold);">
+          <h3 style="margin-bottom: 1rem; color: var(--charcoal);">How long does shipping take?</h3>
+          <p>Standard shipping within the US takes 3-5 business days. International shipping varies by location but typically takes 7-14 business days. All pieces are carefully packaged to ensure they arrive in perfect condition.</p>
+        </div>
+
+        <div style="background: white; padding: 2rem; border-left: 3px solid var(--warm-gold);">
+          <h3 style="margin-bottom: 1rem; color: var(--charcoal);">What is your return policy?</h3>
+          <p>We offer a 14-day return policy for unworn, unaltered items in their original packaging. Custom-designed pieces are final sale. Please contact us before initiating a return.</p>
+        </div>
+
+        <div style="background: white; padding: 2rem; border-left: 3px solid var(--warm-gold);">
+          <h3 style="margin-bottom: 1rem; color: var(--charcoal);">How do I care for my T-Fa pieces?</h3>
+          <p>Each piece comes with specific care instructions. Generally, we recommend spot cleaning or dry cleaning for our luxury pieces. The Hat should be stored in its dust bag. The Bodysuit can be hand washed cold. The Two-in-One is dry clean only.</p>
+        </div>
+
+        <div style="background: white; padding: 2rem; border-left: 3px solid var(--warm-gold);">
+          <h3 style="margin-bottom: 1rem; color: var(--charcoal);">How long does custom design take?</h3>
+          <p>Custom designs typically take 8-12 weeks from consultation to completion. Rush orders may be available for an additional fee. Timeline depends on design complexity and material availability.</p>
+        </div>
+
+        <div style="background: white; padding: 2rem; border-left: 3px solid var(--warm-gold);">
+          <h3 style="margin-bottom: 1rem; color: var(--charcoal);">Do you offer gift wrapping?</h3>
+          <p>Yes! All T-Fa pieces can be gift wrapped at no additional charge. Simply select the gift wrapping option at checkout and include a personal message.</p>
+        </div>
+
+        <div style="background: white; padding: 2rem; border-left: 3px solid var(--warm-gold);">
+          <h3 style="margin-bottom: 1rem; color: var(--charcoal);">Can I schedule a private appointment?</h3>
+          <p>Absolutely. We welcome private appointments at our atelier. Contact us to schedule a time to experience the collection in person, receive personal styling, or discuss custom designs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>T-FA</h3>
+        <p style="color: rgba(255,255,255,0.8); margin-top: 1rem;">
+          Fashion born from love, loss, and rebirth.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="shop.html">All Products</a></li>
+          <li><a href="product-hat.html">The Hat</a></li>
+          <li><a href="product-bodysuit.html">The Bodysuit</a></li>
+          <li><a href="product-two-in-one.html">Two-in-One</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>About</h3>
+        <ul>
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="custom-design.html">Custom Design</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Care Instructions</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 T-Fa. All rights reserved. Designed with love and memory.</p>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Drawer -->
+  <div class="cart-overlay"></div>
+  <div class="cart-drawer">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="close-cart" aria-label="Close Cart">✕</button>
+    </div>
+
+    <div class="cart-items"></div>
+
+    <div class="cart-empty" style="display: none;">
+      <p>Your cart is empty</p>
+      <a href="shop.html" class="btn btn-primary" style="margin-top: 2rem;">Continue Shopping</a>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="cart-total-label">Total:</span>
+        <span class="cart-total-amount">$0.00</span>
+      </div>
+      <button class="btn btn-primary checkout-btn" onclick="alert('Checkout functionality would be integrated with payment processor')">
+        Proceed to Checkout
+      </button>
+    </div>
+  </div>
+
+  <!-- AI Stylist Panel -->
+  <div class="ai-stylist">
+    <div class="ai-stylist-header">
+      <h3>💬 Ask Anna AI</h3>
+      <button class="close-ai" aria-label="Close AI Stylist">✕</button>
+    </div>
+
+    <div class="ai-chat-messages"></div>
+
+    <div class="ai-input-area">
+      <form id="aiChatForm" class="ai-input-form">
+        <input
+          type="text"
+          id="aiInput"
+          class="ai-input"
+          placeholder="Ask about styling, sizing, or our story..."
+          required
+        >
+        <button type="submit" class="ai-send-btn">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- AI Stylist Toggle Button -->
+  <button class="ai-toggle-btn" id="aiToggleBtn" aria-label="Open AI Stylist">
+    💬
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/ai-stylist.js"></script>
+  <script>
+    // Handle contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // In a real implementation, this would send form data to backend
+      alert('Thank you for your message! We will respond within 24 hours.');
+
+      // Reset form
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

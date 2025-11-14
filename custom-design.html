@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Design | T-Fa</title>
+  <meta name="description" content="Create a bespoke T-Fa piece that tells your unique story. Custom luxury fashion designed for you.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">T-FA</a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="custom-design.html">Custom Design</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-icons">
+        <button id="cartBtn" aria-label="Shopping Cart">
+          🛍️
+          <span class="cart-count">0</span>
+        </button>
+        <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Custom Design Hero -->
+  <section class="hero" style="height: 60vh; background: linear-gradient(135deg, var(--warm-gold) 0%, #C99A5F 100%);">
+    <div class="hero-content">
+      <h1 style="color: white;">Tell Your Story</h1>
+      <p class="hero-subtitle" style="color: rgba(255,255,255,0.95);">
+        Create a bespoke piece that carries your unique narrative
+      </p>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <section style="padding: 5rem 2rem; max-width: 900px; margin: 0 auto; text-align: center;">
+    <h2 style="margin-bottom: 2rem;">Your Story Deserves Its Own Design</h2>
+    <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
+      Just as T-Fa was born from a personal story of love and transformation, we believe your
+      journey deserves to be honored through custom design. Share your vision, your memories,
+      your story — and we'll create a piece that embodies it.
+    </p>
+  </section>
+
+  <!-- Custom Design Process -->
+  <section style="padding: 5rem 2rem; background: var(--soft-beige);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <h2 style="text-align: center; margin-bottom: 4rem;">The Custom Design Process</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem;">
+        <div style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">1️⃣</div>
+          <h3 style="margin-bottom: 1rem; color: var(--warm-gold);">Share Your Vision</h3>
+          <p>Tell us your story. Upload inspiration photos. Describe the feeling you want to embody.</p>
+        </div>
+
+        <div style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">2️⃣</div>
+          <h3 style="margin-bottom: 1rem; color: var(--warm-gold);">Consultation</h3>
+          <p>We'll schedule a personal consultation to discuss materials, design, and symbolism.</p>
+        </div>
+
+        <div style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">3️⃣</div>
+          <h3 style="margin-bottom: 1rem; color: var(--warm-gold);">Design & Approval</h3>
+          <p>Receive sketches and fabric samples. Refine until it's perfect.</p>
+        </div>
+
+        <div style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">4️⃣</div>
+          <h3 style="margin-bottom: 1rem; color: var(--warm-gold);">Creation</h3>
+          <p>Your piece is handcrafted with the same care and intention as our collection pieces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Design Form -->
+  <section style="padding: 6rem 2rem;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Request a Custom Design</h2>
+
+      <form id="customDesignForm" style="background: white; padding: 3rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+
+        <!-- Personal Information -->
+        <h3 style="margin-bottom: 2rem; color: var(--warm-gold);">Personal Information</h3>
+
+        <div class="form-group">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+
+        <!-- Design Type -->
+        <h3 style="margin: 3rem 0 2rem; color: var(--warm-gold);">Design Type</h3>
+
+        <div class="form-group">
+          <label for="designType">What type of piece are you interested in? *</label>
+          <select id="designType" name="designType" required>
+            <option value="">Select a design type</option>
+            <option value="hat">Custom Hat</option>
+            <option value="bodysuit">Custom Bodysuit</option>
+            <option value="pants-skirt">Custom Pants/Skirt</option>
+            <option value="jacket">Custom Jacket</option>
+            <option value="dress">Custom Dress</option>
+            <option value="other">Something Unique</option>
+          </select>
+        </div>
+
+        <!-- Your Story -->
+        <h3 style="margin: 3rem 0 2rem; color: var(--warm-gold);">Your Story</h3>
+
+        <div class="form-group">
+          <label for="story">Tell us your story *</label>
+          <textarea
+            id="story"
+            name="story"
+            placeholder="What does this piece mean to you? What story do you want it to tell? What moment or memory do you want to honor?"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="inspiration">Design Inspiration</label>
+          <textarea
+            id="inspiration"
+            name="inspiration"
+            placeholder="Describe colors, materials, silhouettes, or feelings that inspire you..."
+          ></textarea>
+        </div>
+
+        <!-- Photo Upload -->
+        <div class="form-group">
+          <label for="photos">Upload Inspiration Photos</label>
+          <div class="file-upload">
+            <input type="file" id="photos" name="photos" multiple accept="image/*">
+            <p>Click to upload images or drag and drop</p>
+            <p style="font-size: 0.9rem; color: var(--charcoal); margin-top: 0.5rem;">
+              JPG, PNG, or PDF. Max 10 files.
+            </p>
+          </div>
+        </div>
+
+        <!-- Measurements -->
+        <h3 style="margin: 3rem 0 2rem; color: var(--warm-gold);">Measurements</h3>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+          <div class="form-group">
+            <label for="bust">Bust / Chest</label>
+            <input type="text" id="bust" name="bust" placeholder="e.g., 34 inches">
+          </div>
+
+          <div class="form-group">
+            <label for="waist">Waist</label>
+            <input type="text" id="waist" name="waist" placeholder="e.g., 28 inches">
+          </div>
+
+          <div class="form-group">
+            <label for="hips">Hips</label>
+            <input type="text" id="hips" name="hips" placeholder="e.g., 36 inches">
+          </div>
+
+          <div class="form-group">
+            <label for="height">Height</label>
+            <input type="text" id="height" name="height" placeholder="e.g., 5'6\"">
+          </div>
+        </div>
+
+        <!-- Budget & Timeline -->
+        <h3 style="margin: 3rem 0 2rem; color: var(--warm-gold);">Budget & Timeline</h3>
+
+        <div class="form-group">
+          <label for="budget">Estimated Budget</label>
+          <select id="budget" name="budget">
+            <option value="">Select a range</option>
+            <option value="500-1000">$500 - $1,000</option>
+            <option value="1000-2000">$1,000 - $2,000</option>
+            <option value="2000-3500">$2,000 - $3,500</option>
+            <option value="3500+">$3,500+</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="timeline">When do you need this piece?</label>
+          <select id="timeline" name="timeline">
+            <option value="">Select a timeline</option>
+            <option value="flexible">I'm flexible</option>
+            <option value="3-months">Within 3 months</option>
+            <option value="6-months">Within 6 months</option>
+            <option value="specific">I have a specific date</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="additionalNotes">Additional Notes</label>
+          <textarea
+            id="additionalNotes"
+            name="additionalNotes"
+            placeholder="Anything else you'd like us to know?"
+          ></textarea>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 2rem;">
+          Submit Design Request
+        </button>
+
+        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--charcoal);">
+          We'll respond within 48 hours to schedule your personal consultation.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section style="padding: 6rem 2rem; background: var(--charcoal); color: white;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <h2 style="text-align: center; margin-bottom: 4rem; color: white;">Custom Design Stories</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+        <div style="padding: 2rem; background: rgba(255,255,255,0.05); border-left: 3px solid var(--warm-gold);">
+          <p style="font-style: italic; margin-bottom: 1.5rem; color: rgba(255,255,255,0.9);">
+            "My custom bodysuit honors my grandmother's legacy. T-Fa wove her favorite lace into
+            the design, and now I carry her with me in every moment I wear it."
+          </p>
+          <p style="color: var(--warm-gold);">— Sarah M.</p>
+        </div>
+
+        <div style="padding: 2rem; background: rgba(255,255,255,0.05); border-left: 3px solid var(--warm-gold);">
+          <p style="font-style: italic; margin-bottom: 1.5rem; color: rgba(255,255,255,0.9);">
+            "The custom jacket they designed for me represents my journey from corporate life to
+            creative freedom. It's both powerful and liberating."
+          </p>
+          <p style="color: var(--warm-gold);">— James K.</p>
+        </div>
+
+        <div style="padding: 2rem; background: rgba(255,255,255,0.05); border-left: 3px solid var(--warm-gold);">
+          <p style="font-style: italic; margin-bottom: 1.5rem; color: rgba(255,255,255,0.9);">
+            "T-Fa turned my wedding dress into a piece I can wear again and again. They understood
+            that some memories deserve to live beyond one day."
+          </p>
+          <p style="color: var(--warm-gold);">— Maria L.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>T-FA</h3>
+        <p style="color: rgba(255,255,255,0.8); margin-top: 1rem;">
+          Fashion born from love, loss, and rebirth.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="shop.html">All Products</a></li>
+          <li><a href="product-hat.html">The Hat</a></li>
+          <li><a href="product-bodysuit.html">The Bodysuit</a></li>
+          <li><a href="product-two-in-one.html">Two-in-One</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>About</h3>
+        <ul>
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="custom-design.html">Custom Design</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Care Instructions</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 T-Fa. All rights reserved. Designed with love and memory.</p>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Drawer -->
+  <div class="cart-overlay"></div>
+  <div class="cart-drawer">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="close-cart" aria-label="Close Cart">✕</button>
+    </div>
+
+    <div class="cart-items"></div>
+
+    <div class="cart-empty" style="display: none;">
+      <p>Your cart is empty</p>
+      <a href="shop.html" class="btn btn-primary" style="margin-top: 2rem;">Continue Shopping</a>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="cart-total-label">Total:</span>
+        <span class="cart-total-amount">$0.00</span>
+      </div>
+      <button class="btn btn-primary checkout-btn" onclick="alert('Checkout functionality would be integrated with payment processor')">
+        Proceed to Checkout
+      </button>
+    </div>
+  </div>
+
+  <!-- AI Stylist Panel -->
+  <div class="ai-stylist">
+    <div class="ai-stylist-header">
+      <h3>💬 Ask Anna AI</h3>
+      <button class="close-ai" aria-label="Close AI Stylist">✕</button>
+    </div>
+
+    <div class="ai-chat-messages"></div>
+
+    <div class="ai-input-area">
+      <form id="aiChatForm" class="ai-input-form">
+        <input
+          type="text"
+          id="aiInput"
+          class="ai-input"
+          placeholder="Ask about styling, sizing, or our story..."
+          required
+        >
+        <button type="submit" class="ai-send-btn">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- AI Stylist Toggle Button -->
+  <button class="ai-toggle-btn" id="aiToggleBtn" aria-label="Open AI Stylist">
+    💬
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/ai-stylist.js"></script>
+  <script>
+    // Handle custom design form submission
+    document.getElementById('customDesignForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // In a real implementation, this would send form data to backend
+      alert('Thank you for your custom design request! We will contact you within 48 hours to schedule your personal consultation.');
+
+      // Reset form
+      this.reset();
+    });
+
+    // File upload interaction
+    const fileUpload = document.querySelector('.file-upload');
+    const fileInput = document.getElementById('photos');
+
+    fileUpload.addEventListener('click', function() {
+      fileInput.click();
+    });
+
+    fileInput.addEventListener('change', function() {
+      if (this.files.length > 0) {
+        const fileCount = this.files.length;
+        const text = fileCount === 1 ? '1 file selected' : `${fileCount} files selected`;
+        fileUpload.querySelector('p').textContent = text;
+      }
+    });
+  </script>
+
+</body>
+</html>

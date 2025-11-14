@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T-Fa | Luxury Fashion Born From Love & Loss</title>
+  <meta name="description" content="T-Fa designs fashion pieces that represent family, healing, storytelling, and rebirth. Discover The Rebirth Collection.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">T-FA</a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="custom-design.html">Custom Design</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-icons">
+        <button id="cartBtn" aria-label="Shopping Cart">
+          🛍️
+          <span class="cart-count">0</span>
+        </button>
+        <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>Where Love Becomes Fashion</h1>
+      <p class="hero-subtitle">
+        T-Fa — The story of a father, a mother, and their daughter Anna.<br>
+        Fashion born from memory, designed for transformation.
+      </p>
+      <a href="shop.html" class="btn btn-primary">Discover The Collection</a>
+    </div>
+    <div class="scroll-indicator">
+      <span>↓</span>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="story-section" id="story">
+    <div class="story-content">
+      <div class="section-title">
+        <p class="section-subtitle">The Beginning</p>
+        <h2>A Moment That Changed Everything</h2>
+      </div>
+
+      <p>
+        She was only a few months old when her father placed his hat on her head before leaving home.
+        That moment became the soul of T-Fa — a story of love, loss, rebirth, and creativity.
+      </p>
+
+      <p>
+        <strong>T-Fa stands for:</strong><br>
+        T = The father<br>
+        F = The mother<br>
+        a = Anna, the daughter
+      </p>
+
+      <div class="story-grid">
+        <div class="story-item">
+          <div class="story-icon">👤</div>
+          <h3>T — The Father</h3>
+          <p>The beginning. The moment. The hat that started it all.</p>
+        </div>
+
+        <div class="story-item">
+          <div class="story-icon">♡</div>
+          <h3>F — The Mother</h3>
+          <p>The heart. The strength. The vessel of transformation.</p>
+        </div>
+
+        <div class="story-item">
+          <div class="story-icon">✨</div>
+          <h3>a — Anna</h3>
+          <p>The rebirth. The legacy. The future woven from the past.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section id="featured">
+    <div class="section-title">
+      <p class="section-subtitle">The Rebirth Collection</p>
+      <h2>Three Pieces, One Story</h2>
+    </div>
+
+    <div class="product-grid">
+      <!-- Product 1: The Hat -->
+      <div class="product-card" onclick="window.location.href='product-hat.html'">
+        <div class="product-image-wrapper">
+          <div class="product-image" style="background: linear-gradient(135deg, #EDE5D9 0%, #D7A86E 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+            🎩
+          </div>
+          <div class="product-overlay">
+            <button class="quick-view-btn">View Details</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">The Hat — The Beginning</h3>
+          <p class="product-description">
+            The iconic piece where it all began. A father's hat placed on his daughter's head.
+          </p>
+          <p class="product-price">$295</p>
+        </div>
+      </div>
+
+      <!-- Product 2: The Bodysuit -->
+      <div class="product-card" onclick="window.location.href='product-bodysuit.html'">
+        <div class="product-image-wrapper">
+          <div class="product-image" style="background: linear-gradient(135deg, #000000 0%, #D7A86E 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white;">
+            ✨
+          </div>
+          <div class="product-overlay">
+            <button class="quick-view-btn">View Details</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">The Bodysuit — The Rebirth</h3>
+          <p class="product-description">
+            Transformation embodied. The journey from loss to healing, darkness to light.
+          </p>
+          <p class="product-price">$495</p>
+        </div>
+      </div>
+
+      <!-- Product 3: Two-in-One -->
+      <div class="product-card" onclick="window.location.href='product-two-in-one.html'">
+        <div class="product-image-wrapper">
+          <div class="product-image" style="background: linear-gradient(135deg, #F7E8E1 0%, #111111 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+            ♾️
+          </div>
+          <div class="product-overlay">
+            <button class="quick-view-btn">View Details</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Two-in-One Pants & Skirt — The Unity</h3>
+          <p class="product-description">
+            Duality and unity. Wear as pants or skirt — the choice defines your story.
+          </p>
+          <p class="product-price">$595</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="shop.html" class="btn btn-secondary">View Full Collection</a>
+    </div>
+  </section>
+
+  <!-- About the Designer -->
+  <section class="about-section">
+    <div class="about-content">
+      <div class="about-text">
+        <div class="section-title">
+          <p class="section-subtitle" style="color: var(--warm-gold);">The Designer</p>
+          <h2>Fashion as Healing</h2>
+        </div>
+        <p>
+          T-Fa is not just a fashion brand — it's a journey of transformation. Each piece
+          is designed to honor memory, celebrate resilience, and embrace the beauty of rebirth.
+        </p>
+        <p>
+          From the moment a father's hat was placed on a daughter's head, T-Fa was destined
+          to become a symbol of love that transcends loss. Every stitch carries intention.
+          Every silhouette tells a story. Every collection is a chapter in the ongoing narrative
+          of family, healing, and creative rebirth.
+        </p>
+        <p>
+          This is fashion with soul. Fashion that remembers. Fashion that transforms.
+        </p>
+        <a href="our-story.html" class="btn btn-gold" style="margin-top: 2rem;">Read Our Full Story</a>
+      </div>
+      <div>
+        <div style="width: 100%; height: 600px; background: linear-gradient(135deg, var(--warm-gold) 0%, var(--charcoal) 100%); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 6rem; color: white;">
+          💫
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <h2>Join The T-Fa Family</h2>
+    <p>Be the first to know about new collections, stories, and exclusive offerings.</p>
+
+    <form class="newsletter-form">
+      <input
+        type="email"
+        class="newsletter-input"
+        placeholder="Enter your email"
+        required
+      >
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>T-FA</h3>
+        <p style="color: rgba(255,255,255,0.8); margin-top: 1rem;">
+          Fashion born from love, loss, and rebirth.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="shop.html">All Products</a></li>
+          <li><a href="product-hat.html">The Hat</a></li>
+          <li><a href="product-bodysuit.html">The Bodysuit</a></li>
+          <li><a href="product-two-in-one.html">Two-in-One</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>About</h3>
+        <ul>
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="custom-design.html">Custom Design</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Care Instructions</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 T-Fa. All rights reserved. Designed with love and memory.</p>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Drawer -->
+  <div class="cart-overlay"></div>
+  <div class="cart-drawer">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="close-cart" aria-label="Close Cart">✕</button>
+    </div>
+
+    <div class="cart-items"></div>
+
+    <div class="cart-empty" style="display: none;">
+      <p>Your cart is empty</p>
+      <a href="shop.html" class="btn btn-primary" style="margin-top: 2rem;">Continue Shopping</a>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="cart-total-label">Total:</span>
+        <span class="cart-total-amount">$0.00</span>
+      </div>
+      <button class="btn btn-primary checkout-btn" onclick="alert('Checkout functionality would be integrated with payment processor')">
+        Proceed to Checkout
+      </button>
+    </div>
+  </div>
+
+  <!-- AI Stylist Panel -->
+  <div class="ai-stylist">
+    <div class="ai-stylist-header">
+      <h3>💬 Ask Anna AI</h3>
+      <button class="close-ai" aria-label="Close AI Stylist">✕</button>
+    </div>
+
+    <div class="ai-chat-messages"></div>
+
+    <div class="ai-input-area">
+      <form id="aiChatForm" class="ai-input-form">
+        <input
+          type="text"
+          id="aiInput"
+          class="ai-input"
+          placeholder="Ask about styling, sizing, or our story..."
+          required
+        >
+        <button type="submit" class="ai-send-btn">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- AI Stylist Toggle Button -->
+  <button class="ai-toggle-btn" id="aiToggleBtn" aria-label="Open AI Stylist">
+    💬
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/ai-stylist.js"></script>
+
+</body>
+</html>
